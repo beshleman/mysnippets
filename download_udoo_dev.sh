@@ -9,3 +9,6 @@ ARCH=arm make udoo_neo_defconfig
 
 # Compile the kernel, arm-linux-gnueabihf compiles with the ARM ABI expecting hardware support for floating point units
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage -j5
+
+# Compile device tree blobs
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs -j5

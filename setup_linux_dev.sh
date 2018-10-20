@@ -14,6 +14,7 @@ sudo aptitude install tftpd-hpa
 sudo aptitude install nfs-kernel-server
 
 
+echo "Modify /etc/dhcp/dhcpd.conf..."
 # Setup DHCP config
 # /etc/dhcp/dhcpd.conf
 # subnet 10.0.0.0 netmask 255.255.255.0 {
@@ -27,8 +28,15 @@ sudo aptitude install nfs-kernel-server
      #filename "zImage";
 #}
 
+echo "Modify /etc/exports..."
+# /etc/exports
+# /nfsroot *(rw,sync,no_root_squash,no_subtree_check)
+ 
+
 sudo chmod 1777 /var/lib/tftpboot/
 sudo mkdir -m 777 /nfsroot
 sudo service nfs-kernel-server restart
 sudo service isc-dhcp-server restart
 sudo service nfs-kernel-server restart
+
+# Don't forget, set CONFIG_NFS_FS=y and CONFIG_ROOT_NFS=y
