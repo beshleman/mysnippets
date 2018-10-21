@@ -39,4 +39,15 @@ sudo service nfs-kernel-server restart
 sudo service isc-dhcp-server restart
 sudo service nfs-kernel-server restart
 
-# Don't forget, set CONFIG_NFS_FS=y and CONFIG_ROOT_NFS=y
+# Don't forget, set the following kernel config options
+# CONFIG_NFS_FS=y
+# CONFIG_NFS_V2=y
+# CONFIG_NFS_V3=y
+# CONFIG_NFS_V3_ACL=y
+# CONFIG_ROOT_NFS=y
+# CONFIG_NFSD=m
+# CONFIG_NFSD_V3=y
+# CONFIG_NFSD_V4=y
+# CONFIG_NFS_ACL_SUPPORT=y
+# CONFIG_NFS_COMMON=y
+
